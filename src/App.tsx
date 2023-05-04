@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <main> TODO  LIST</main>
+       <h1>TODO LIST</h1>
     </ThemeProvider>
   );
 }
