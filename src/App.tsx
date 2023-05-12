@@ -1,17 +1,12 @@
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { AppBar, Badge, Box, Button, Chip, Container, Grid, TextField, Toolbar, Typography, colors } from '@mui/material/index';
-import { dark } from '@mui/material/styles/createPalette';
-import { CheckFat, PlusCircle, Rocket } from '@phosphor-icons/react';
-import {useState, useEffect} from 'react'
+import { AppBar, Badge, Button, Chip, Container, Grid, TextField, Toolbar, Typography, colors, createTheme } from '@mui/material/index';
+import { CheckFat, PlusCircle, } from '@phosphor-icons/react';
+import Box, { BoxProps } from '@mui/material/Box';
+import { useEffect, useState } from 'react';
 import { Task } from './types';
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-    ...dark
-  },
-});
+
+
 
 function App() {
   const theme = createTheme()
@@ -21,7 +16,7 @@ function App() {
 
   },[])
   return (
-    <ThemeProvider theme={darkTheme}>
+    <>
       <CssBaseline />
       <AppBar position="static">
         <Toolbar sx={{
@@ -54,7 +49,7 @@ function App() {
             top: '-27px',
           }}>
             <Grid item xl={10} sm={12}>
-              <TextField placeholder='adicione uma nova tarefa' variant='outlined' name='task' fullWidth sx={{
+              <TextField placeholder='Adicione uma nova tarefa' variant='outlined' name='task' fullWidth sx={{
                 backgroundColor: colors.grey[800]
               }}>
               </TextField>
@@ -62,9 +57,7 @@ function App() {
             <Grid item xl={2} sm={12}>
               <Button variant='contained' sx={{
                 height: '100%'
-              }}>
-                <span>Criar</span><PlusCircle size={32} />
-
+              }}><span>Criar</span><PlusCircle size={32} />
               </Button>
             </Grid>
             <Grid container spacing={theme.spacing(1)} sx={{
@@ -72,7 +65,7 @@ function App() {
             }}>
               <Grid item sx={{
                 display: 'flex',
-                justifyContent: 'end',
+                justifyContent: 'space-between',
               }}>
                 <Box display='flex' alignItems='center' gap={theme.spacing(1)}>
                   <Typography>
@@ -88,11 +81,21 @@ function App() {
                   <Chip label={'2 de 5'}></Chip>
                 </Box>
               </Grid>
+              <Grid>
+
+                <Box display='flex' alignItems='center' gap={theme.spacing(1)}>
+                  <Typography>
+                    Tarefas Concluidas
+                  </Typography>
+                  <Chip label={'2 de 5'}></Chip>
+                </Box>
+              </Grid>
             </Grid>
           </Grid>
         </Container>
       </main>
-    </ThemeProvider>
+    </>
+
   );
 }
 
