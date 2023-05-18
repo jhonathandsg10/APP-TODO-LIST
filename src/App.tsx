@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppBar, Badge, Button, Chip, Container, Grid, TextField, Toolbar, Typography, colors, createTheme } from '@mui/material/index';
 import { CheckFat, PlusCircle, } from '@phosphor-icons/react';
-import Box, { BoxProps } from '@mui/material/Box';
+import grid, { BoxProps } from '@mui/material/Box';
 import { useEffect, useState } from 'react';
 import { Task } from './types';
 
@@ -60,37 +60,33 @@ function App() {
               }}><span>Criar</span><PlusCircle size={32} />
               </Button>
             </Grid>
-            <Grid container spacing={theme.spacing(1)} sx={{
+
+            <Grid container xl={12} spacing={theme.spacing(1)} sx={{
               marginTop: '25px'
             }}>
-              <Grid item sx={{
+              <Grid  xl={12} item sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
               }}>
-                <Box display='flex' alignItems='center' gap={theme.spacing(1)}>
+                <Grid xl={6} display='flex' alignItems='center' gap={theme.spacing(1)}>
                   <Typography>
                     Tarefas Criadas
                   </Typography>
                   <Chip label={0}></Chip>
-                </Box>
+                </Grid>
 
-                <Box display='flex' alignItems='center' gap={theme.spacing(1)}>
+                <Grid xl={3} display='flex' alignItems='center' gap={theme.spacing(1)}>
                   <Typography>
                     Tarefas Concluidas
                   </Typography>
                   <Chip label={'2 de 5'}></Chip>
-                </Box>
+                </Grid>
               </Grid>
-              <Grid>
-
-                <Box display='flex' alignItems='center' gap={theme.spacing(1)}>
-                  <Typography>
-                    Tarefas Concluidas
-                  </Typography>
-                  <Chip label={'2 de 5'}></Chip>
-                </Box>
-              </Grid>
+                  
+              
             </Grid>
+
+
           </Grid>
         </Container>
       </main>
