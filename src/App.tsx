@@ -1,5 +1,5 @@
 import CssBaseline from '@mui/material/CssBaseline';
-import { AppBar, Badge, Button, Chip, Container, Grid, TextField, Toolbar, Typography, colors, createTheme } from '@mui/material/index';
+import { AppBar, Badge, Button, Card, CardContent, Chip, Container, Grid, IconButton, ListItem, ListItemSecondaryAction, TextField, Toolbar, Typography, colors, createTheme } from '@mui/material/index';
 import { CheckFat, PlusCircle, } from '@phosphor-icons/react';
 import Box, { BoxProps } from '@mui/material/Box';
 import { useEffect, useState } from 'react';
@@ -10,11 +10,11 @@ import { Task } from './types';
 
 function App() {
   const theme = createTheme()
-  const [tasks,setTasks]= useState<Task[]>()
+  const [tasks, setTasks] = useState<Task[]>()
 
-  useEffect(()=>{
+  useEffect(() => {
 
-  },[])
+  }, [])
   return (
     <>
       <CssBaseline />
@@ -73,15 +73,6 @@ function App() {
                   </Typography>
                   <Chip label={0}></Chip>
                 </Box>
-
-                <Box display='flex' alignItems='center' gap={theme.spacing(1)}>
-                  <Typography>
-                    Tarefas Concluidas
-                  </Typography>
-                  <Chip label={'2 de 5'}></Chip>
-                </Box>
-              </Grid>
-              <Grid>
 
                 <Box display='flex' alignItems='center' gap={theme.spacing(1)}>
                   <Typography>
